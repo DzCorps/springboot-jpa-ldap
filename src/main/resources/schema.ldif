@@ -1,0 +1,63 @@
+dn: dc=sppoti,dc=com
+objectclass: top
+objectclass: domain
+objectclass: extensibleObject
+dc: sppoti
+
+# Organizational Units
+dn: ou=groups,dc=sppoti,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: groups
+
+dn: ou=people,dc=sppoti,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: people
+
+# Create People
+dn: uid=john,ou=people,dc=sppoti,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: John Doe
+sn: John
+uid: john
+password: secret
+
+dn: uid=jihn,ou=people,dc=sppoti,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Jihn Die
+sn: Jihn
+uid: jihn
+password: secret
+
+dn: uid=jahn,ou=people,dc=sppoti,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: wail djenane
+sn: wail
+uid: djenane
+password: secret
+
+# Create Groups
+dn: cn=developers,ou=groups,dc=sppoti,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: developers
+ou: developer
+uniqueMember: uid=john,ou=people,dc=sppoti,dc=com
+uniqueMember: uid=jihn,ou=people,dc=sppoti,dc=com
+
+dn: cn=managers,ou=groups,dc=sppoti,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: managers
+ou: manager
+uniqueMember: uid=jahn,ou=people,dc=sppoti,dc=com
